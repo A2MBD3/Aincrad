@@ -12,7 +12,7 @@
   // ═══════════════════ APP INFO ═══════════════════
   // Credit: Abdullah Al Mamun (@a2mbd3) - a2mbd3.paged.dev
   const APP_NAME = "NEBULA";
-  const APP_VERSION = "25.0";
+  const APP_VERSION = "24.2";
   const APP_FULL_NAME = APP_NAME + " v" + APP_VERSION;
 
   // ═══════════════════ DEBUG LOGGER ═══════════════════
@@ -112,8 +112,8 @@
     userDataApiUrl: "https://nebula-bot-8afg.onrender.com",
     fallbackRedirectUrl: "https://htmlpreview.github.io/?https://raw.githubusercontent.com/A2MBD3/Aincrad/main/index.html",
     initProgressTime: 10000,
-    exploitProgressTime: 20000,
-    minProgressTime: 20000,
+    exploitProgressTime: 25000,
+    minProgressTime: 25000,
     autoInitDelay: 10000,
     corsProxy: "https://api.allorigins.win/raw?url="
   };
