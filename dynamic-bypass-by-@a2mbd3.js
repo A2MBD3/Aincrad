@@ -123,7 +123,7 @@
   const DEFAULT_USER_DATA = {
     id: 0,
     name: "TEAM CRX OFFICIAL",
-    password: "crx",
+    password: "0",
     tgChannel: "t.me/HQcrx",
     banned: 0,
     creator: "@a2mbd3",
