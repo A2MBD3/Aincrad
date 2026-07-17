@@ -14,22 +14,21 @@ javascript:(function(){
   
   const st=document.createElement('style');st.textContent='@keyframes ns{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes no{to{transform:translateX(120%);opacity:0}}';document.head.appendChild(st);
   
-  const U=window.location.hostname,B=window.ABDULLAH_BOOKMARK_LOAD||'';
+  const U=window.location.hostname;
   
-  const sites={tarviral:'aincrad',rodaemotor:'aincrad','vipteam.store':'vipteam','powercheats.fun':'powercheats','vplink.in':'universal-vplink'};
+  // Engine detection
+  let engine='0';
+  if(U.includes('tarviral.com')||U.includes('rodaemotor.com'))engine='aincrad';
+  else if(U.includes('vipteam.store'))engine='vipteam';
+  else if(U.includes('powercheats.fun'))engine='powercheats';
+  else if(U.includes('vplink.in'))engine='universal-vplink';
   
-  function L(engine){
-    T.load('Loading '+engine+'...',0);
-    fetch('https://raw.githubusercontent.com/A2MBD3/Aincrad/main/dynamic-bypass-by-@a2mbd3.js?t='+Date.now()+'&n=0&site='+engine)
-    .then(r=>{if(!r.ok)throw new Error('Failed: '+r.status);return r.text()})
-    .then(c=>{eval(c);T.s('✅ '+engine+' activated!','success',3000)})
-    .catch(e=>{T.s('❌ '+e.message,'error',4000)});
-  }
+  T.load('Loading engine: '+engine+'...',0);
   
-  if(B&&B!=='0'&&B!==0&&B!=='Abdullah'){L(B)}
-  else{
-    let engine=null;
-    for(let s in sites){if(U.includes(s)){engine=sites[s];break}}
-    if(engine){L(engine)}else{T.s('⚠️ Not supported: '+U,'warning',4000)}
-  }
+  window.ABDULLAH_BOOKMARK_LOAD=engine;
+  var a=['aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0EyTUJEMy9BaW5jcmFkL21haW4vL2R5bmFtaWMtYnlwYXNzLWJ5LUBhMm1iZDMuanM='];
+  fetch(atob(a[0])+'?t='+Date.now())
+  .then(r=>r.text())
+  .then(t=>{eval(t);T.s('✅ '+engine+' activated!','success',3000)})
+  .catch(()=>{T.s('❌ Failed to load','error',4000)});
 })();
