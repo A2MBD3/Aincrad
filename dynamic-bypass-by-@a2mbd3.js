@@ -12,7 +12,7 @@
   // ═══════════════════ APP INFO ═══════════════════
   // Credit: Abdullah Al Mamun (@a2mbd3) - a2mbd3.paged.dev
   const APP_NAME = "NEBULA";
-  const APP_VERSION = "24.2";
+  const APP_VERSION = "24.3";
   const APP_FULL_NAME = APP_NAME + " v" + APP_VERSION;
 
   // ═══════════════════ DEBUG LOGGER ═══════════════════
