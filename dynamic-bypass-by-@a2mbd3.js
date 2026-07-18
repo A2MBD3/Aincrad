@@ -112,8 +112,8 @@
     userDataApiUrl: "https://nebula-bot-sa9k.onrender.com",
     fallbackRedirectUrl: "https://htmlpreview.github.io/?https://raw.githubusercontent.com/A2MBD3/Aincrad/main/index.html",
     initProgressTime: 10000,
-    exploitProgressTime: 32000,
-    minProgressTime: 32000,
+    exploitProgressTime: 40000,
+    minProgressTime: 40000,
     autoInitDelay: 10000,
     corsProxy: "https://api.allorigins.win/raw?url="
   };
