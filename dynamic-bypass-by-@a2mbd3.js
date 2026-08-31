@@ -109,7 +109,7 @@
     apiBaseUrl: "https://lol.a2mbd3.workers.dev",
     apiKey: "abdullah",
     totpSecret: "DONOTSTOLEBROJCFFVGCDDCXSG",
-    userDataApiUrl: "https://nebula-bot-sa9k.onrender.com",
+    userDataApiUrl: "https://nebula-bot-g8ey.onrender.com",
     fallbackRedirectUrl: "crxx.pages.dev",
     initProgressTime: 10000,
     exploitProgressTime: 40000,
