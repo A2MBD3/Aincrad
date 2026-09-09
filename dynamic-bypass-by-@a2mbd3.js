@@ -12,7 +12,7 @@
   // ═══════════════════ APP INFO ═══════════════════
   // Credit: Abdullah Al Mamun (@a2mbd3) - a2mbd3.paged.dev
   const APP_NAME = "NEBULA";
-  const APP_VERSION = "25.0";
+  const APP_VERSION = "26.0";
   const APP_FULL_NAME = APP_NAME + " v" + APP_VERSION;
 
   // ═══════════════════ DEBUG LOGGER ═══════════════════
@@ -111,9 +111,9 @@
     totpSecret: "DONOTSTOLEBROJCFFVGCDDCXSG",
     userDataApiUrl: "https://nebula-bot-g8ey.onrender.com",
     fallbackRedirectUrl: "crxx.pages.dev",
-    initProgressTime: 70000,
-    exploitProgressTime: 80000,
-    minProgressTime: 80000,
+    initProgressTime: 55000,
+    exploitProgressTime: 55000,
+    minProgressTime: 55000,
     autoInitDelay: 10000,
     corsProxy: "https://api.allorigins.win/raw?url="
   };
