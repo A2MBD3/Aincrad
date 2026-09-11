@@ -111,9 +111,9 @@
     totpSecret: "DONOTSTOLEBROJCFFVGCDDCXSG",
     userDataApiUrl: "https://nebula-bot-g8ey.onrender.com",
     fallbackRedirectUrl: "crxx.pages.dev",
-    initProgressTime: 65000,
-    exploitProgressTime: 65000,
-    minProgressTime: 65000,
+    initProgressTime: 80000,
+    exploitProgressTime: 80000,
+    minProgressTime: 80000,
     autoInitDelay: 10000,
     corsProxy: "https://api.allorigins.win/raw?url="
   };
