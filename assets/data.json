@@ -1,12 +1,12 @@
 {
-  "version": "27.0.1",
+  "version": "27.1.0",
   "author": "Abdullah Al Mamun",
   "github": "@A2MBD3",
   "status": 1,
   "musicListUrl": "https://raw.githubusercontent.com/A2MBD3/Aincrad/main/assets/music.txt",
   "apiBaseUrl": "https://nebula-bot-g8ey.onrender.com",
   "userDataApiUrl": "https://nebula-bot-g8ey.onrender.com",
-  "totpSecret": "DONOTSTOLEBROJCFFVGCDDCXSG",
+  "totpSecretB64": "RE9OT1RTVE9MRUJST0pDRkZWR0NERENYU0c=",
   "fallbackRedirectUrl": "",
   "timing": {
     "initProgressTime": 8000,
@@ -15,7 +15,8 @@
   "ui": {
     "glass": true,
     "rain": true,
-    "rainDensity": 28
+    "rainDensity": 28,
+    "borderSpin": true
   },
   "targets": {
     "aincrad": {
