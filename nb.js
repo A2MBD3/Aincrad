@@ -12,56 +12,129 @@
 :root {
   --bg: #0b1120; --card: #1e293b; --bd: #334155; --t: #e2e8f0;
   --m: #94a3b8; --a: #38bdf8; --a2: #818cf8; --ok: #34d399; --err: #f87171;
+  --shadow: 0 10px 30px -10px rgba(0,0,0,.5);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: var(--bg); color: var(--t);
-  min-height: 100vh; padding: 20px; line-height: 1.45;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #1e293b 0%, transparent 55%),
+    radial-gradient(900px 500px at 110% 10%, #312e81 0%, transparent 50%),
+    var(--bg);
+  color: var(--t);
+  min-height: 100vh; padding: 28px 18px 60px; line-height: 1.45;
 }
-.wrap { max-width: 820px; margin: 0 auto; }
+.wrap { width: 100%; max-width: 1280px; margin: 0 auto; }
+
+/* —— header —— */
+.head {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 22px;
+}
 h1 {
-  font-size: 1.4rem; font-weight: 700;
+  font-size: 1.7rem; font-weight: 800; letter-spacing: .5px;
   background: linear-gradient(90deg, var(--a), var(--a2));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.sub { color: var(--m); font-size: 0.85rem; margin: 6px 0 18px; }
+.sub { color: var(--m); font-size: 0.85rem; margin-top: 4px; }
+.badge {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: 0.72rem; background: #312e81; color: #c4b5fd;
+  margin-left: 8px; vertical-align: middle;
+}
+
+/* —— full-width grid —— */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 420px) 1fr;
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+.col { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+
+/* —— cards —— */
 .card {
-  background: var(--card); border: 1px solid var(--bd);
-  border-radius: 14px; padding: 16px; margin-bottom: 14px;
+  background: linear-gradient(180deg, #1e293b, #172033);
+  border: 1px solid var(--bd);
+  border-radius: 16px; padding: 18px;
+  box-shadow: var(--shadow);
 }
-label { display: block; font-size: 0.78rem; color: var(--m); margin-bottom: 4px; }
+.card-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; margin-bottom: 12px;
+}
+h2 {
+  font-size: 0.95rem; color: var(--a); font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+h2::before {
+  content: ""; width: 4px; height: 16px; border-radius: 4px;
+  background: linear-gradient(180deg, var(--a), var(--a2));
+}
+
+/* —— form —— */
+label { display: block; font-size: 0.78rem; color: var(--m); margin-bottom: 5px; font-weight: 600; }
 input, select {
-  width: 100%; padding: 10px 12px; border-radius: 10px;
+  width: 100%; padding: 11px 13px; border-radius: 10px;
   border: 1px solid var(--bd); background: #0f172a; color: var(--t);
-  font-size: 0.95rem; margin-bottom: 12px; outline: none;
+  font-size: 0.95rem; margin-bottom: 14px; outline: none;
+  transition: border-color .15s, box-shadow .15s;
 }
-input:focus { border-color: var(--a); }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+input:focus, select:focus {
+  border-color: var(--a);
+  box-shadow: 0 0 0 3px rgba(56,189,248,.15);
+}
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
-.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* —— buttons —— */
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
 button {
-  padding: 10px 14px; border: none; border-radius: 10px;
+  padding: 11px 16px; border: none; border-radius: 10px;
   font-weight: 600; font-size: 0.88rem; cursor: pointer;
+  transition: opacity .15s, transform .1s, box-shadow .15s;
 }
 .primary {
   background: linear-gradient(135deg, var(--a), var(--a2)); color: #0f172a;
+  box-shadow: 0 6px 16px -6px rgba(56,189,248,.6);
 }
 .ghost { background: #0f172a; color: var(--t); border: 1px solid var(--bd); }
+.ghost:hover { border-color: var(--a); }
 button:active { opacity: 0.85; transform: scale(0.98); }
-.status { font-size: 0.85rem; margin-top: 10px; min-height: 1.2em; }
-.ok { color: var(--ok); } .err { color: var(--err); }
-h2 { font-size: 0.92rem; color: var(--a); margin-bottom: 8px; }
+
+/* copy button */
+.copy {
+  background: #0f172a; color: var(--m);
+  border: 1px solid var(--bd); border-radius: 8px;
+  padding: 5px 11px; font-size: 0.72rem; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 5px;
+  cursor: pointer; transition: all .15s;
+}
+.copy:hover { color: var(--a); border-color: var(--a); }
+.copy.done { color: var(--ok); border-color: var(--ok); }
+
+/* —— status —— */
+.status {
+  font-size: 0.85rem; margin-top: 12px; min-height: 1.2em;
+  padding: 8px 12px; border-radius: 8px; background: #0f172a;
+  border: 1px solid var(--bd);
+}
+.ok { color: var(--ok); border-color: rgba(52,211,153,.4); }
+.err { color: var(--err); border-color: rgba(248,113,113,.4); }
+
+/* —— pre blocks (full body) —— */
 pre {
-  background: #0f172a; border: 1px solid var(--bd); border-radius: 10px;
-  padding: 12px; overflow: auto; font-size: 0.75rem; max-height: 280px;
-  white-space: pre-wrap; word-break: break-all;
+  background: #0f172a; border: 1px solid var(--bd); border-radius: 12px;
+  padding: 14px; overflow: auto; font-size: 0.75rem; line-height: 1.5;
+  white-space: pre-wrap; word-break: break-word;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  max-height: 460px;
 }
-.hint { font-size: 0.8rem; color: var(--m); margin-top: 8px; }
-.badge {
-  display: inline-block; padding: 2px 8px; border-radius: 999px;
-  font-size: 0.72rem; background: #312e81; color: #c4b5fd; margin-left: 6px;
-}
+.body-pre { max-height: 620px; }
+.hint { font-size: 0.8rem; color: var(--m); margin-top: 10px; }
 `;
 
   function el(tag, attrs, ...kids) {
@@ -82,8 +155,40 @@ pre {
   }
 
   function originBase() {
-    // same host as page (crx.com / 127.0.0.1)
     return location.origin;
+  }
+
+  /* —— copy helper —— */
+  function makeCopyBtn(getText, label) {
+    const btn = el("button", {
+      className: "copy",
+      type: "button",
+      onClick: async () => {
+        const text = getText();
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (e) {
+          // fallback
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand("copy"); } catch (_) {}
+          document.body.removeChild(ta);
+        }
+        const old = btn.textContent;
+        btn.textContent = "✓ Copied";
+        btn.classList.add("done");
+        setTimeout(() => {
+          btn.textContent = old;
+          btn.classList.remove("done");
+        }, 1200);
+      },
+    });
+    btn.textContent = label || "⧉ Copy";
+    return btn;
   }
 
   function buildUI() {
@@ -97,9 +202,12 @@ pre {
       el("option", { value: "POST", text: "POST" }),
       el("option", { value: "GET", text: "GET" })
     );
-    const status = el("div", { className: "status", id: "status" });
+    const status = el("div", { className: "status", id: "status", text: "Ready." });
     const headersPre = el("pre", { id: "headers", text: "—" });
-    const bodyPre = el("pre", { id: "body", text: "—" });
+    const bodyPre = el("pre", { id: "body", className: "body-pre", text: "—" });
+
+    const copyHeaders = makeCopyBtn(() => headersPre.textContent || "");
+    const copyBody = makeCopyBtn(() => bodyPre.textContent || "");
 
     async function run(mode) {
       const base = (baseIn.value || originBase()).replace(/\/$/, "");
@@ -191,45 +299,94 @@ pre {
     const wrap = el(
       "div",
       { className: "wrap" },
-      el("h1", null, "NEBULA", el("span", { className: "badge", text: "nb.js" })),
-      el("p", { className: "sub", text: "Tester · " + API_PATH + " · " + location.host }),
+
+      /* —— header —— */
       el(
         "div",
-        { className: "card" },
-        el("label", { text: "Base URL" }),
-        baseIn,
+        { className: "head" },
         el(
           "div",
-          { className: "row" },
-          el("div", null, el("label", { text: "Domain" }), domainIn),
-          el("div", null, el("label", { text: "Cookie name" }), nameIn)
+          null,
+          el("h1", null, "NEBULA", el("span", { className: "badge", text: "nb.js" })),
+          el("p", { className: "sub", text: "Tester · " + API_PATH + " · " + location.host })
         ),
-        el("label", { text: "Method" }),
-        methodSel,
-        el(
-          "div",
-          { className: "btns" },
-          el("button", { className: "primary", text: "▶ Request", onClick: () => run() }),
-          el("button", { className: "ghost", text: "Wrong path", onClick: () => run("BAD") }),
-          el("button", {
-            className: "ghost",
-            text: "Clear",
-            onClick: () => {
-              headersPre.textContent = "—";
-              bodyPre.textContent = "—";
-              status.textContent = "";
-              status.className = "status";
-            },
-          })
-        ),
-        status,
-        el("p", {
-          className: "hint",
-          text: "Success = encrypted body. Plain \"fail\" on error. Decrypt offline with private key.",
+        el("button", {
+          className: "ghost",
+          text: "⌫ Clear",
+          onClick: () => {
+            headersPre.textContent = "—";
+            bodyPre.textContent = "—";
+            status.textContent = "Ready.";
+            status.className = "status";
+          },
         })
       ),
-      el("div", { className: "card" }, el("h2", { text: "Response headers" }), headersPre),
-      el("div", { className: "card" }, el("h2", { text: "Body" }), bodyPre)
+
+      /* —— main grid —— */
+      el(
+        "div",
+        { className: "grid" },
+
+        /* left column: controls */
+        el(
+          "div",
+          { className: "col" },
+          el(
+            "div",
+            { className: "card" },
+            el("div", { className: "card-head" }, el("h2", null, "Request")),
+            el("label", { text: "Base URL" }),
+            baseIn,
+            el(
+              "div",
+              { className: "row" },
+              el("div", null, el("label", { text: "Domain" }), domainIn),
+              el("div", null, el("label", { text: "Cookie name" }), nameIn)
+            ),
+            el("label", { text: "Method" }),
+            methodSel,
+            el(
+              "div",
+              { className: "btns" },
+              el("button", { className: "primary", text: "▶ Request", onClick: () => run() }),
+              el("button", { className: "ghost", text: "Wrong path", onClick: () => run("BAD") })
+            ),
+            status,
+            el("p", {
+              className: "hint",
+              text: "Success = encrypted body. Plain \"fail\" on error. Decrypt offline with private key.",
+            })
+          )
+        ),
+
+        /* right column: results */
+        el(
+          "div",
+          { className: "col" },
+          el(
+            "div",
+            { className: "card" },
+            el(
+              "div",
+              { className: "card-head" },
+              el("h2", null, "Response headers"),
+              copyHeaders
+            ),
+            headersPre
+          ),
+          el(
+            "div",
+            { className: "card" },
+            el(
+              "div",
+              { className: "card-head" },
+              el("h2", null, "Body"),
+              copyBody
+            ),
+            bodyPre
+          )
+        )
+      )
     );
 
     document.body.appendChild(wrap);
