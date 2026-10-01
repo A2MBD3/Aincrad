@@ -1,0 +1,33 @@
+{
+  "versionCode": 3,
+  "selfHash": "6d00ac2da87c18b0789fc040a26bfdcf2482cf1b1e07d101e8c94f443a0d9ad4",
+  "selfHash_arm64": "6d00ac2da87c18b0789fc040a26bfdcf2482cf1b1e07d101e8c94f443a0d9ad4",
+  "selfHash_arm": "e19c22abbe127522a557f89f4894eac26fca29212086a9f1f7c4f9816b59b79c",
+  "files": [
+    {
+      "path": "module.prop",
+      "sha256": "0d9b81e582ead273c6f09124cbe0a9bfb8a87370585df5ac7ac074201dca6fba",
+      "url": "https://YOUR_URL/module.prop"
+    },
+    {
+      "path": "service.sh",
+      "sha256": "ffabea04d6ba57aeac8ff8b36b642dbfdf5b81c79438ea1e7140126a98c1f849",
+      "url": "https://YOUR_URL/service.sh"
+    },
+    {
+      "path": "system/etc/hosts",
+      "sha256": "5ddbd39cf65ea01d8de7a2be9bf4a4414ff6771b0ba90a0f2d16d063ddccf62b",
+      "url": "https://YOUR_URL/hosts"
+    },
+    {
+      "path": "system/bin/nebula64",
+      "sha256": "6d00ac2da87c18b0789fc040a26bfdcf2482cf1b1e07d101e8c94f443a0d9ad4",
+      "url": "https://YOUR_URL/nebula64"
+    },
+    {
+      "path": "system/bin/nebula32",
+      "sha256": "e19c22abbe127522a557f89f4894eac26fca29212086a9f1f7c4f9816b59b79c",
+      "url": "https://YOUR_URL/nebula32"
+    }
+  ]
+}
